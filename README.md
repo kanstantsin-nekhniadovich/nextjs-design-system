@@ -1,1 +1,1 @@
-# -nextjs-design-system
+# nextjs-design-system
