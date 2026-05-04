@@ -1,0 +1,81 @@
+{
+  "name": "@kanstantsin-nekhniadovich/nextjs-design-system",
+  "version": "0.0.1",
+  "description": "Reusable React UI primitives and design tokens for Next.js applications.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanstantsin-nekhniadovich/nextjs-design-system.git"
+  },
+  "homepage": "https://github.com/kanstantsin-nekhniadovich/nextjs-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/kanstantsin-nekhniadovich/nextjs-design-system/issues"
+  },
+  "keywords": [
+    "design-system",
+    "ui",
+    "react",
+    "nextjs",
+    "components"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "build": "rollup -c && tsc -p tsconfig.build.json",
+    "lint": "eslint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "compile": "tsc -p tsconfig.json --noEmit",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^17.5.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "jiti": "^2.6.1",
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.1",
+    "rollup": "^4.52.5",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.1",
+    "ts-jest": "^29.4.9"
+  }
+}

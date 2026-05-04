@@ -1,0 +1,44 @@
+.base {
+  font-family: var(--font-family-base);
+  cursor: pointer;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.default {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.default:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+.subtle {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.subtle:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.muted:hover {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+}
+
+.unstyled {
+  color: inherit;
+  text-decoration: none;
+}
+
+.unstyled:hover {
+  text-decoration: none;
+}
