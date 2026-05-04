@@ -19,11 +19,15 @@ export default defineConfig({
   input: "./rollup-entry.ts",
   external: (id) =>
     externalPackages.some((packageName) => id === packageName || id.startsWith(`${packageName}/`)),
-  output: {
+  output: [{
     file: "./dist/index.js",
     format: "esm",
-    sourcemap: true,
-  },
+    sourcemap: false,
+  }, {
+    file: "./dist/index.cjs",
+    format: "cjs",
+    sourcemap: false,
+  }],
   plugins: [
     nodeResolve({
       extensions: [".mjs", ".js", ".json", ".ts", ".tsx"],
