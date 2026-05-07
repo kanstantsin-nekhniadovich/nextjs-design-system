@@ -1,6 +1,6 @@
 {
   "name": "@kanstantsin-nekhniadovich/nextjs-design-system",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Reusable React UI primitives and design tokens for Next.js applications.",
   "type": "module",
   "repository": {
