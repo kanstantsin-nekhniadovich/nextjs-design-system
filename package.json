@@ -41,15 +41,18 @@
   "scripts": {
     "build": "rollup -c && tsc -p tsconfig.build.json",
     "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "compile": "tsc -p tsconfig.json --noEmit",
     "prepack": "npm run build",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "dependencies": {
     "clsx": "^2.1.1"
@@ -77,6 +80,9 @@
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.1",
-    "ts-jest": "^29.4.9"
+    "ts-jest": "^29.4.9",
+    "storybook": "^10.3.6",
+    "@storybook/react-vite": "^10.3.6",
+    "eslint-plugin-storybook": "^10.3.6"
   }
 }
