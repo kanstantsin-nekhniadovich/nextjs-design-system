@@ -27,7 +27,10 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mts"
-, "jest.config.js"  ],
+    "**/*.mts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "jest.config.js"
+  ],
   "exclude": ["node_modules"]
 }
