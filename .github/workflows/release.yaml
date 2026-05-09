@@ -40,9 +40,6 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Build
-        run: npm run build
-
       - name: Audit signatures
         run: npm audit signatures
 
