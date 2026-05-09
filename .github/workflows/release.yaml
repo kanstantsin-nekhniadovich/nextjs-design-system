@@ -13,7 +13,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # to be able to publish a GitHub release
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+      packages: write
 
     steps:
       - uses: actions/checkout@v4
@@ -45,4 +49,5 @@ jobs:
       - name: Release
         env: 
           NPM_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: npx semantic-release
