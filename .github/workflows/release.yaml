@@ -1,0 +1,48 @@
+name: Release workflow
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.11.0
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint & Compile
+        run: |
+          npm run lint
+          npm run compile
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Audit signatures
+        run: npm audit signatures
+
+      - name: Release
+        env: 
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npx semantic-release
